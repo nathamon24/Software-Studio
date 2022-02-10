@@ -5,65 +5,97 @@
   </head>
 
   <style>
-    #members-button {
-        border: transparent;
-        background: transparent;
-        color: plum;
+    .btn {
+      border: none;
+      background: none;
+      color: plum;
+      cursor: pointer;
     }
-
   </style>
   <body>
-      <h2>My First Javascript</h2>
+    <h2>My First Javascript</h2>
     <div>
       <input
         type="button"
         value="Click me to display Date and Time."
         onclick="window.alert('I told you not to click me!');"
-      /> 
+      />
     </div>
-    <br>
-      <script type="text/javascript">
-        function getMember() {
-          var members = document.getElementById("members");
-          var displaySetting = members.style.display;
-          if (displaySetting == "none") {
-            members.style.display = "block";
-          } else {
-            members.style.display = "none";
-          }
+    <br />
+    <script type="text/javascript">
+      function getMember() {
+        var members = document.getElementById("members");
+        var displaySetting = members.style.display;
+        if (displaySetting == "none") {
+          members.style.display = "block";
+        } else {
+          members.style.display = "none";
         }
-        function mouseOver(){
-            var button = document.getElementById("members-button")
-            button.style.color = "navy";
-            button.style.background= "khaki";
-        };
-        function mouseOut(){
-            var button = document.getElementById("members-button")
-            button.style.color = "plum";
-            button.style.background= "none";
-        };
-      </script>
-      <div>
-        <span  id="members-button" onmouseover="mouseOver()" onmouseout="mouseOut()" onclick="getMember()" >Members</span>
+      }
+      function mouseOver() {
+        document.getElementById("members-button").style.cssText =
+          "color:navy;background:khaki";
+        // button.style.color = "navy";
+        // button.style.background= "khaki";
+      }
+      function mouseOut() {
+        document.getElementById("members-button").style.cssText =
+          "color:plum;background:none";
+        // button.style.color = "plum";
+        // button.style.background= "none";
+      }
+    </script>
+    <div>
+      <span
+        id="members-button"
+        class="btn"
+        onmouseenter="mouseOver()"
+        onmouseleave="mouseOut()"
+        onclick="getMember()"
+        >Members</span
+      >
 
-        <ul style="display: none" id="members">
-          <li></li>
-          <li>Nathamon Boonprasert, ID:62010285</li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
-      <div>
-          <h1>Snapshots</h1>
-          <ul>
-            <li id="">Fireworks</li>
-            <li>Crest</li>
-            <li>Action</li>
-            <li>Buffalo</li>
-          </ul>
-      </div>
-   
+      <ul style="display: none" id="members">
+        <li>Kan Maksapsin, ID:62010052</li>
+        <li>Nathamon Boonprasert, ID:62010285</li>
+        <li>Nontapan Rujirakal, ID:62010453</li>
+        <li>Narawich Youbua, ID:62010465</li>
+        <li>Nitipat Boongate, ID:62010494</li>
+        <li>Nitipoom Klaynium, ID:62010496</li>
+      </ul>
+    </div>
+    <div>
+      <h1>Snapshots</h1>
+      <script type="text/javascript">
+        img = [
+          "https://images.unsplash.com/photo-1641803216396-7d82c43e71fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+          "https://images.unsplash.com/photo-1560738071-6fd529da7f24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
+          "https://images.unsplash.com/photo-1558647913-d1c0e5d478fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+          "https://images.unsplash.com/photo-1523857159215-11e46223d00b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+        ];
+        function changeImg(index) {
+          document.getElementById("image").src = img[index];
+        }
+      </script>
+      <ul>
+        <li id="btn1" onclick="changeImg(0)">
+          <label class="btn">Fireworks</label>
+        </li>
+        <li id="btn2" onclick="changeImg(1)">
+          <lable class="btn">Crest</lable>
+        </li>
+        <li id="btn3" onclick="changeImg(2)">
+          <lable class="btn">Action</lable>
+        </li>
+        <li id="btn4" onclick="changeImg(3)">
+          <label class="btn"> Buffalo </label>
+        </li>
+      </ul>
+      <img
+        src="https://images.unsplash.com/photo-1627796795540-18e2db6d3908?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
+        style="height: 300px"
+        id="image"
+      />
+    </div>
   </body>
 </html>
