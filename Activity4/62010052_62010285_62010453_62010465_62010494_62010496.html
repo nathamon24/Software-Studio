@@ -17,12 +17,12 @@
     <div>
       <script>
         colors = [
-          ["#EB9FA1", "#a2eb9f"], 
-          ["#C0C0C0", "#1A3668"], 
-          ["#1A3668", "#D6E9CA"], 
-          ["#991218", "#FFF67F"], 
-          ["#6A258A", "#F7AB00"], 
-          ["#8DBCF4", "#f74d41"], 
+          ["#EB9FA1", "#a2eb9f"],
+          ["#C0C0C0", "#1A3668"],
+          ["#1A3668", "#D6E9CA"],
+          ["#991218", "#FFF67F"],
+          ["#6A258A", "#F7AB00"],
+          ["#8DBCF4", "#f74d41"],
         ];
         function getDate() {
           let date = document.getElementById("date");
@@ -87,14 +87,16 @@
     <div>
       <h1>Snapshots</h1>
       <script type="text/javascript">
-          patrick = "https://images.unsplash.com/photo-1627796795540-18e2db6d3908?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
-          astronaut = "https://images.unsplash.com/photo-1620428268482-cf1851a36764?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1109&q=80"
-          guitar = "https://images.unsplash.com/photo-1524650359799-842906ca1c06?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
-          dango = "https://images.unsplash.com/photo-1601317266542-4f4abae2cca4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1228&q=80"
-          
-        img = [
-          patrick, astronaut, guitar, dango
-        ];
+        patrick =
+          "https://images.unsplash.com/photo-1627796795540-18e2db6d3908?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80";
+        astronaut =
+          "https://images.unsplash.com/photo-1620428268482-cf1851a36764?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1109&q=80";
+        guitar =
+          "https://images.unsplash.com/photo-1524650359799-842906ca1c06?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80";
+        dango =
+          "https://images.unsplash.com/photo-1601317266542-4f4abae2cca4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1228&q=80";
+
+        img = [patrick, astronaut, guitar, dango];
         function changeImg(index) {
           document.getElementById("image").src = img[index];
         }
