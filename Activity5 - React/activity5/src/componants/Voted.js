@@ -11,9 +11,13 @@ function Button() {
         setResult(result + 1);
       }
     } else {
-      if (result === 1 || result === "MIN") {
+      if (result === 1) {
         setResult("MIN");
-      } else {
+      } 
+      else if( result === "MIN"){
+        alert("Hello! I am an alert box!!");
+      }
+          else {
         setResult(result - 1);
       }
     }

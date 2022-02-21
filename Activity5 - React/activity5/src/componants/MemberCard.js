@@ -8,8 +8,8 @@ function MemberCard(props) {
         <div className="top-left">
           <h1>{props.firstname} {props.lastname}</h1>
           <h2>{props.id}</h2>
-          <div>
-            {props.des}
+          <div dangerouslySetInnerHTML={{ __html: props.des }}>
+            {/* {props.des} */}
           </div>
         </div>
         <div className="top-right">
