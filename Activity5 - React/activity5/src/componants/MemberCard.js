@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import "./MemberCard.css";
-import Voted from "./Voted"
+import Vote from "./Vote"
 function MemberCard(props) {
   return (
     <div className="card">
@@ -17,7 +17,7 @@ function MemberCard(props) {
         </div>
       </div>
       <div className="bottom">
-          <Voted />
+          <Vote />
       </div>
     </div>
   );

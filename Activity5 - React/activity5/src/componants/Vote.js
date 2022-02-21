@@ -1,23 +1,28 @@
-import "./Voted.css";
+import "./Vote.css";
 import React, { useState } from "react";
 
-function Button() {
+function Vote() {
   const [result, setResult] = useState("MIN");
   const clickHandler = (event) => {
+    // min = 0 , max = 10
     if (event) {
       if (result === "MIN") {
         setResult(1);
+      } else if (result === "MAX") {
+        alert("Cannot Vote more");
+      } else if (result === 9) {
+        setResult("MAX");
       } else {
         setResult(result + 1);
       }
     } else {
       if (result === 1) {
         setResult("MIN");
-      } 
-      else if( result === "MIN"){
-        alert("Hello! I am an alert box!!");
-      }
-          else {
+      } else if (result === "MIN") {
+        alert("Cannot unvote");
+      } else if (result === "MAX") {
+        setResult(9);
+      } else {
         setResult(result - 1);
       }
     }
@@ -31,4 +36,4 @@ function Button() {
     </div>
   );
 }
-export default Button;
+export default Vote;
