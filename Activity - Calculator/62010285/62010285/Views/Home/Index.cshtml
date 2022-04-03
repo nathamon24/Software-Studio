@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "Calculator";
+}
+
+<head>
+    <script>
+        var xmlhttp = new XMLHttpRequest();
+        function makerequest(serverPage, objID, input) {
+            var obj = document.getElementById(objID);
+            var url = serverPage + "/" + obj.value +"/" +input
+            console.log(url);
+            console.log(obj.value);
+            xmlhttp.open("GET", url);
+            xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200){ 
+                    obj.value = xmlhttp.responseText;
+                    console.log(xmlhttp)
+                }
+            }
+            xmlhttp.send(null);
+        }
+    </script>
+</head>
+<body>
+<div class="h-50 w-25">
+    <h1>@ViewData["Title"]</h1>
+    <div class="row">
+        <input type="text" id="result" class="mb-2" value="0"/>
+        <div id="keypad">
+            <div class="row">
+                <button onclick="makerequest('https://localhost:7010/HomeController/Calculate','result','1'); return false;" type="button" id="num1" class="col-3" >1</button>
+                <button onclick="makerequest('https://localhost:7010/HomeController/Calculate','result','2'); return false;" type="button" id="num2" class="col-3" >2</button>
+                <button onclick="makerequest('https://localhost:7010/HomeController/Calculate','result','3'); return false;" type="button" id="num3" class="col-3" >3</button>
+                <button onclick="makerequest('https://localhost:7010/HomeController/Calculate','result','+'); return false;" type="button" id="plus" class="col-3" >+</button>
+            </div>
+            
+            <div class="row">
+                <button onclick="makerequest('https://localhost:7010/HomeController/Calculate','result','4'); return false;" type="button" id="num4" class="col-3">4</button>
+                <button onclick="makerequest('https://localhost:7010/HomeController/Calculate','result','5'); return false;" type="button" id="num5" class="col-3">5</button>
+                <button onclick="makerequest('https://localhost:7010/HomeController/Calculate','result','6'); return false;" type="button" id="num6" class="col-3">6</button>
+                <button onclick="makerequest('https://localhost:7010/HomeController/Calculate','result','-'); return false;" type="button" id="minus" class="col-3" >-</button>
+            </div>
+
+            <div class="row">
+                <button onclick="makerequest('https://localhost:7010/HomeController/Calculate','result','7'); return false;" type="button" id="num7" class="col-3" >7</button>
+                <button onclick="makerequest('https://localhost:7010/HomeController/Calculate','result','8'); return false;" type="button" id="num8" class="col-3" >8</button>
+                <button onclick="makerequest('https://localhost:7010/HomeController/Calculate','result','9'); return false;" type="button" id="num9" class="col-3" >9</button>
+                <button onclick="makerequest('https://localhost:7010/HomeController/Calculate','result','*'); return false;" type="button" id="mul" class="col-3" >*</button>
+            </div>
+            <div class="row">
+                <button onclick="makerequest('https://localhost:7010/HomeController/Calculate','result','0'); return false;" type="button" id="num0"class="col-3" >0</button>
+                <button onclick="makerequest('https://localhost:7010/HomeController/Calculate','result','.'); return false;" type="button" id="dot" class="col-3" >.</button>
+                <button onclick="makerequest('https://localhost:7010/HomeController/Calculate','result','='); return false;" type="button" id="equals" class="col-3" >=</button>
+                <button onclick="makerequest('https://localhost:7010/HomeController/Calculate','result','÷'); return false;" type="button" id="div" class="col-3" >/</button>
+            </div>
+            <div class="row">
+                <button onclick="makerequest('https://localhost:7010/HomeController/Calculate','result','C'); return false;" type="button" id="clear" >Clear</button>
+                            </div>
+        </div>
+        
+    </div>
+</div>
+
+</body>
